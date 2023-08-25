@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page</title>
+</head>
+
+<body>
+    <h1>Welcome To Order Page...</h1>
+
+    <h2>{{note}}</h2>
+    <form action="{% url 'pizza:order_page' %}" method="post">
+        {% csrf_token %}
+        {{pizzaform.as_p}}
+
+        <input type="submit" value="Order Pizza">
+
+    </form>
+
+
+    <br>
+    <a href="{% url 'pizza:home_page' %}">Back to Home</a>
+</body>
+
+</html>
